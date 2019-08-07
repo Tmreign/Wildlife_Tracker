@@ -1,0 +1,38 @@
+{{#partial "content"}}
+
+<h1>ENDANGERED ANIMALS</h1>
+
+
+<form action="/esuccess" method="post">
+    <label for="rname">Ranger Name</label>
+    <input id="rname" name="rname" type="text" class="form-control">
+
+    <label for="name">Animal Name</label>
+    <input id="aname" name="aname" type="text" class="form-control">
+    <br><br>
+    <label for="health">Health</label>
+    <select id="ahealth" name="ahealth">
+        <option>Healthy<option>
+        <option>Ill<option>
+        <option>Okay<option>
+    </select>
+
+    <label for="age">Age</label>
+    <select id="aage" name="aage">
+        <option>Newborn<option>
+        <option>Young<option>
+        <option>Adult<option>
+    </select>
+
+
+    <label for="sighting">Location seen</label>
+    <select id="alocation" name="alocation">
+        <option>Zone A<option>
+        <option>Zone B<option>
+        <option>Zone C<option>
+    </select>
+    <br><br>
+    <button  type="submit" class="btn btn-basic"><h6>Submit</h6></button>
+{{/partial}}
+
+{{> layout.hbs}}
