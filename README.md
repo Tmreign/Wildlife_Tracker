@@ -10,3 +10,5 @@ Currently the bug that exists is that the app may not work on all browsers.
 ## Technologies Used
 
 To come up with the app, i used Java
+
+## Support and contact details
