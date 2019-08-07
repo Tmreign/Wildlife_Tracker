@@ -20,13 +20,13 @@ public class App {
 
         port(port);
 
-        String layout = "template/layout.hbs";
+//        String layout = "layout.hbs";
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<String, Object>();
 
             model.put("track", req.session().attribute("track"));
-            return (new ModelAndView(model, "index.hbs"));
+            return new ModelAndView(model, "index.hbs");
 
         },new HandlebarsTemplateEngine());
 
@@ -34,7 +34,7 @@ public class App {
         get("/endangered", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("track", request.session().attribute("track"));
-            return (new ModelAndView(model, "endangered.hbs"));
+            return new ModelAndView(model, "endangered.hbs");
         },new HandlebarsTemplateEngine());
 
 
@@ -42,7 +42,7 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
 
             model.put("tracks", Animal.all());
-            return(new ModelAndView(model, "animaldisplay.hbs"));
+            return new ModelAndView(model, "animaldisplay.hbs");
 
         },new  HandlebarsTemplateEngine());
 
@@ -50,7 +50,7 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("tracks", Sighting.all());
 
-            return(new ModelAndView(model, "endangereddisplay.hbs"));
+            return new ModelAndView(model, "endangereddisplay.hbs");
 
         },new HandlebarsTemplateEngine());
 
@@ -59,7 +59,7 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
 
             model.put("tracks", request.session().attribute("track"));
-            return (new ModelAndView(model, "animal.hbs"));
+            return new ModelAndView(model, "animal.hbs");
 
         }, new HandlebarsTemplateEngine());
 
@@ -76,7 +76,7 @@ public class App {
 
             Animal newAnimal = new Animal(rangername, animalname, health, age, location);
             newAnimal.save();
-           return (new ModelAndView(model, "animaldisplay.hbs"));
+           return  new ModelAndView(model, "animaldisplay.hbs");
 
         }, new  HandlebarsTemplateEngine());
 
@@ -90,7 +90,7 @@ public class App {
 
             Sighting newSighting = new Sighting (rangername, animalname, health, age, location);
             newSighting.save();
-            return (new ModelAndView(model, "endangereddisplay.hbs"));
+            return  new ModelAndView(model, "endangereddisplay.hbs");
 
         },new HandlebarsTemplateEngine());
 
@@ -104,7 +104,7 @@ public class App {
 
             Animal newAnimal = new Animal(rangername, animalname, health, age, location);
             newAnimal.save();
-            return (new ModelAndView(model, "success.hbs"));
+            return  new ModelAndView(model, "success.hbs");
 
         },new HandlebarsTemplateEngine());
 
@@ -119,7 +119,7 @@ public class App {
             Sighting newSighting = new Sighting (rangername, animalname, health, age, location);
             newSighting.save();
 
-            return (new ModelAndView(model, "esuccess.hbs"));
+            return  new ModelAndView(model, "esuccess.hbs");
 
 
         },new HandlebarsTemplateEngine());
