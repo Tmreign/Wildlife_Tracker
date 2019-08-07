@@ -2,3 +2,4 @@
 #### This is a spark application for tracking animals with the help of rangers.
 #### By **Tom **
 ## Description
+When animals are sited,
